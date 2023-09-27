@@ -3,7 +3,8 @@
 ## Description
 
 UI ToDo application with user auth, CRUD operations (users, tasks, auth, JWT).
-\_\_ **Created with:**
+<br />
+**Created with:**
 
 -   [React](https://react.dev/)
 -   [TypeScript](https://www.typescriptlang.org/)
