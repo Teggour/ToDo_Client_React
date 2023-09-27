@@ -1,27 +1,31 @@
-# React + TypeScript + Vite
+# ToDo App UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+UI ToDo application with user auth, CRUD operations (users, tasks, auth, JWT).
+Created with: [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Chakra-UI](https://chakra-ui.com/), [Zustand](https://zustand-demo.pmnd.rs/), [React-Query](https://tanstack.com/query/v4/docs/react/overview), [React-Beautiful-DnD](https://github.com/atlassian/react-beautiful-dnd), [React Hook Form](https://react-hook-form.com/), [React Router](https://reactrouter.com/en/main), [Generate React CLI](https://github.com/arminbro/generate-react-cli#readme), [Vite](https://vitejs.dev/).
+**© Created by Malik Teggour**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+$ npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+$ cp .env.sample .env
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+And replace data in .env file.
+
+## Running the app
+
+```bash
+# development
+$ npm run dev
+
+# build
+$ npm run build
+```
+
+## Demo
+
+You can visit deployed project: https://todo-senm.onrender.com/
