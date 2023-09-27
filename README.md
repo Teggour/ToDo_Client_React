@@ -17,7 +17,10 @@ UI ToDo application with user auth, CRUD operations (users, tasks, auth, JWT).
 -   [React Router](https://reactrouter.com/en/main)
 -   [Generate React CLI](https://github.com/arminbro/generate-react-cli#readme)
 -   [Vite](https://vitejs.dev/)
-    **© Created by Malik Teggour**
+
+<br />
+
+**© Created by Malik Teggour**
 
 ## Installation
 
