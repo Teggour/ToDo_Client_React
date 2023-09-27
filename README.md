@@ -3,8 +3,19 @@
 ## Description
 
 UI ToDo application with user auth, CRUD operations (users, tasks, auth, JWT).
-**Created with:** -[React](https://react.dev/) -[TypeScript](https://www.typescriptlang.org/) -[Chakra-UI](https://chakra-ui.com/) -[Zustand](https://zustand-demo.pmnd.rs/) -[React-Query](https://tanstack.com/query/v4/docs/react/overview) -[React-Beautiful-DnD](https://github.com/atlassian/react-beautiful-dnd) -[React Hook Form](https://react-hook-form.com/) -[React Router](https://reactrouter.com/en/main) -[Generate React CLI](https://github.com/arminbro/generate-react-cli#readme) -[Vite](https://vitejs.dev/)
-**© Created by Malik Teggour**
+**Created with:**
+
+-   [React](https://react.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Chakra-UI](https://chakra-ui.com/)
+-   [Zustand](https://zustand-demo.pmnd.rs/)
+-   [React-Query](https://tanstack.com/query/v4/docs/react/overview)
+-   [React-Beautiful-DnD](https://github.com/atlassian/react-beautiful-dnd)
+-   [React Hook Form](https://react-hook-form.com/)
+-   [React Router](https://reactrouter.com/en/main)
+-   [Generate React CLI](https://github.com/arminbro/generate-react-cli#readme)
+-   [Vite](https://vitejs.dev/)
+    **© Created by Malik Teggour**
 
 ## Installation
 
