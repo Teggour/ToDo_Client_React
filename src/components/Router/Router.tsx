@@ -22,9 +22,15 @@ const Router: FC = () => {
 				<Route path="404" element={<NotFoundPage />} />
 
 				{/* Home */}
-				<Route index element={<HomePage />} />
-				<Route path="home" element={<Navigate to="/" replace />} />
-				<Route path="homepage" element={<Navigate to="/" replace />} />
+				<Route index element={<Navigate to="/info" replace />} />
+				<Route path="home" element={<Navigate to="/info" replace />} />
+				<Route
+					path="homepage"
+					element={<Navigate to="/info" replace />}
+				/>
+
+				{/* Info */}
+				<Route path="info" element={<HomePage />} />
 
 				{/* Login */}
 				<Route

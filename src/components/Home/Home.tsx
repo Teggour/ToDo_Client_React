@@ -6,15 +6,20 @@ import {
 	Text,
 	Stack,
 	useColorModeValue,
+	Button,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { useAuthStore } from "../../store/auth";
 import Features from "../Features";
 
 interface IProps {}
 
 const Home: FC<IProps> = () => {
+	const isAuth = useAuthStore((store) => store.isAuth);
+
 	return (
 		<Container maxW={"3xl"} cursor={"default"}>
-			<Stack as={Box} textAlign={"center"} spacing={12} py={12}>
+			<Stack as={Box} textAlign={"center"} spacing={12} py={10}>
 				<Heading
 					fontWeight={700}
 					fontSize={58}
@@ -33,6 +38,20 @@ const Home: FC<IProps> = () => {
 					purposes, including project management and personal task
 					tracking.
 				</Text>
+
+				<Button
+					as={Link}
+					to={isAuth ? "/tasks" : "/login"}
+					colorScheme="gray"
+					w={"150px"}
+					m={"0 auto"}
+					bg={useColorModeValue("gray.700", "gray.400")}
+					_hover={{ bg: useColorModeValue("gray.800", "gray.300") }}
+					color={useColorModeValue("gray.100", "gray.900")}
+					variant="solid"
+				>
+					Get started
+				</Button>
 
 				<Features />
 			</Stack>
