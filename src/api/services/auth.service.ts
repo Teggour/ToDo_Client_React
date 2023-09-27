@@ -22,6 +22,12 @@ export interface IResponse<DataType> {
 	data: DataType;
 }
 
+export interface IResponseError {
+	statusCode: number;
+	message: string;
+	error: string;
+}
+
 export interface ILoginData {
 	user: IUserMainInfo;
 	jwtToken: string;

@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { ILogin, authService } from "../services/auth.service";
+import { ILogin, IResponseError, authService } from "../services/auth.service";
 import { useAuthStore } from "../../store/auth";
 
 const useAuthLogin = () => {
@@ -16,11 +17,15 @@ const useAuthLogin = () => {
 		["auth login"],
 		(loginData: ILogin) => authService.login(loginData),
 		{
-			onError: (error: Error) => {
+			onError: (error: AxiosError<IResponseError>) => {
+				console.log({ error });
+
 				toast({
 					position: "top-right",
 					title: "Error!",
-					description: error.message,
+					description: error.response
+						? error.response.data.message
+						: error.message,
 					status: "error",
 					isClosable: true,
 					containerStyle: { mt: 20 },
