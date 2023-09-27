@@ -41,8 +41,6 @@ const EditTask: FC<IProps> = () => {
 	const { mutate } = useTaskEdit();
 	const { data, isLoading, isError } = useTaskOne(Number(id));
 
-	if (isLoading) return <>Loading...</>;
-
 	if (isError) navigate("/404", { state: { redirectFrom: location } });
 
 	const task = data?.data as ITask;
@@ -138,7 +136,7 @@ const EditTask: FC<IProps> = () => {
 					label="Estimated time (h)"
 					name="estimatedTime"
 					type={"number"}
-					defaultValue={Number(task?.estimatedTime)}
+					defaultValue={task?.estimatedTime ?? ""}
 					register={register}
 					errors={errors}
 					options={{
@@ -153,7 +151,7 @@ const EditTask: FC<IProps> = () => {
 					label="Spent time (h)"
 					name="spentTime"
 					type={"number"}
-					defaultValue={Number(task?.spentTime)}
+					defaultValue={task?.spentTime ?? ""}
 					register={register}
 					errors={errors}
 					options={{

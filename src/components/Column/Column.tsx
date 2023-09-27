@@ -11,14 +11,23 @@ import Task from "../Task/Task";
 import CreateTaskModal from "../CreateTaskModal/CreateTaskModal";
 import StrictModeDroppable from "../StrictModeDroppable";
 import { ITask, Status } from "../../api/services/task.service";
+import { TaskSkeleton } from "../Task/Skeleton";
 
 interface IProps {
 	columnTitle: Status;
 	tasks: ITask[];
 	withAddBtn?: boolean;
+	isTasksLoading: boolean;
+	skeletonsCount: number;
 }
 
-const Column: FC<IProps> = ({ columnTitle, tasks, withAddBtn = false }) => {
+const Column: FC<IProps> = ({
+	columnTitle,
+	tasks,
+	withAddBtn = false,
+	isTasksLoading,
+	skeletonsCount,
+}) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [isTooltipOpen, setIsTooltipOpen] = useState<boolean>(false);
 
@@ -86,7 +95,7 @@ const Column: FC<IProps> = ({ columnTitle, tasks, withAddBtn = false }) => {
 						px={2}
 						flex={1}
 						flexDir={"column"}
-						overflowY={"auto"}
+						overflowY={"scroll"}
 						sx={{
 							"&::-webkit-scrollbar": {
 								width: 4,
@@ -104,9 +113,18 @@ const Column: FC<IProps> = ({ columnTitle, tasks, withAddBtn = false }) => {
 						<Fragment>
 							{droppableProvided.placeholder}
 
-							{tasks.map((task, idx) => (
-								<Task key={task.id} task={task} idx={idx} />
-							))}
+							{isTasksLoading
+								? Array.from(
+										{ length: skeletonsCount },
+										(_, i) => <TaskSkeleton key={i} />
+								  )
+								: tasks.map((task, idx) => (
+										<Task
+											key={task.id}
+											task={task}
+											idx={idx}
+										/>
+								  ))}
 						</Fragment>
 					</Flex>
 				)}
